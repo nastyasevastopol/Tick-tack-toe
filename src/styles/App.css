@@ -64,35 +64,37 @@ body{
 	flex: 1 1 45%;
 	display: block; 
 	max-width: 400px;
-	height: 400px;
+	/* height: 400px; */
 }
 
 .field__row{
 	display: block;
-	width: 400px;
-	height: 40px;
+	/* width: 400px; */
+	height: 60px;
 }
 .field__square{
 	display: inline-block;
-	width: 40px;
+	/* width: 40px; */
 	height: auto;
 }
 .square{
 	border: 1px solid black;
 	box-sizing: border-box;
-	width: 40px;
-	height: 40px;
+	width: 60px;
+	height: 60px;
+	transition: All 0.4s ease;
 }
-.square__shoot{
-	width: 40px;
-	height: 40px;
-	object-fit: cover;
-	display: block;
-	transition: All 0.5s ease;
-}
-.square__shoot:hover {
+.square:hover {
 	background-color: rgba(105, 105, 105,0.2);
 }
+.square_img{
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	display: block;
+	
+}
+
 .square__empty{
 	/* width: 40px; */
 	object-fit: cover;
@@ -154,177 +156,3 @@ body{
 	margin: 10px 50px;
 }
 /*  __________________________________________________________________________________________________________________________________________________________________ */
-.list{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	min-height: 650px;
-}
-.form-edit-students{
-	font-size: 18px;
-}
-.form-edit-students__string{
-	margin: 20px auto 0px auto;
-}
-.form-string{
-	display: flex;
-	justify-content:space-evenly;
-}
-
-.form-edit-students__input{
-	padding: 0 5px;
-	margin: 0 40px;
-}
-
-.form-select{
-	font-size: 18px;
-	flex: 0 1 auto;
-}
-.form-edit-students__button{
-
-	padding: 10px 10px;
-	min-width: 200px;
-	margin: 0 50px;
-}
-.form-edit-students__button:hover{
-	background-color: rgba(105, 105, 105,0.5);
-}
-.column{
-	width: 33.33%;
-	text-align: center;
-	position: relative;
-	/* height: 250px; */
-}
-.column__photo{
-	border-radius: 50%;
-	width: 200px;
-	height: 200px;
-	object-fit: cover;
-	margin: 30px 0;
-}
-.column__title{
-	margin: 0 auto;
-	white-space: nowrap; 
-	overflow: hidden; 
-	width: 200px;
-    text-overflow: ellipsis; 
-}
-.column__subtitle{
-	font-size: 0.8em;
-	width: 200px;
-	margin: 20px auto 0px auto;
-	color: grey;
-}
-.teachers-list__title{
-	flex: 0 1 100%;
-	padding: 10px 0;
-}
-.info-window{
-	position: absolute;
-	width: 500px;
-	height: 200px;
-	z-index: 2;
-	display: none;
-	background-color: white;
-	box-shadow: 0 0 10px rgba(1,1,1,0.5);
-	border-radius: 2%;
-}
-.info-window_active{
-	display: block;
-	left: 50px;
-	top: 30px;
-}
-.info-window_active-right{
-	top: 30px;
-	left: -250px;
-}
-.info-window__close-button{
-	width: 30px;
-	height: 30px;
-	object-fit: cover;
-	margin-right: 0;
-	margin-left: 92%;
-}
-.info-window__container{
-	display: flex;
-	justify-content:space-between;
-}
-.info-window__data{
-	text-align: left;
-	padding: 0 20px 10px 10px;
-	font-size: 16px;
-}
-.info-window__photo{
-	border-radius: 5%;
-	width: 150px;
-	height: 150px;
-	object-fit: cover;
-	margin-right: 10px;
-}
-.info-window__title{
-	white-space: nowrap; 
-	overflow: hidden; 
-	text-overflow: ellipsis;
-	width: 300px;
-	font-size: 28px;
-}
-.info-window__row{	
-	display: flex;
-	align-items: baseline;
-	padding: 20px 10px 10px 0;
-}
-.info-window__subtitle{
-	color: grey;
-	flex: 1 1 50%;
-}
-.info-window__information{
-	flex: 1 1 50%;
-}
-.page-buttons{
-	text-align: center;
-	margin: 20px auto;
-}
-.page-buttons__item{
-	max-width: 45px;
-	opacity: 20%;
-	transition: All 0.5s ease;
-}
-.page-buttons__item:hover{
-	opacity: 35%;
-}
-.page-button__item_prev{
-transform: rotate(180deg);
-}
-/* .form-add-person__block{
-	position: absolute;
-} */
-.form-add-person{
-	position: absolute;
-	/* margin: auto; */
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-	width: 900px;
-	height: 50%;
-	background: white;
-	border-radius: 5%;
-}
-.form-add-person__block_disabled{
-	display: none;
-}
-.form-add-person__string{
-	margin: 20px auto 0px auto;
-}
-
-.b-popup {
-    width: 100%;
-    min-height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    overflow: hidden;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-}
