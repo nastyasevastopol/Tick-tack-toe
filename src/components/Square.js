@@ -5,7 +5,7 @@ class Square extends React.Component {
             this.state = {  id: props.id, 
                             key: props.id, 
                             value: props.value,
-                            wasShoot: props.wasShoot,
+                            wasShoot: props.wasShoot || false,
                             wasAlreadyShoot: props. wasAlreadyShoot || false,
                         }
         }
@@ -14,7 +14,7 @@ class Square extends React.Component {
      * @param {Event} e - событие нажатия на квадратик
      */
     handleClick(e){
-        if (this.state.wasAlreadyShoot==false){
+        if (this.state.wasAlreadyShoot == false){
             this.setState({wasShoot : true, wasAlreadyShoot: true, value: 1}); //тут надо будет убрать
             this.props.computerClick(e, this.state.id);
         }
@@ -24,29 +24,23 @@ class Square extends React.Component {
         }
     }
     componentWillReceiveProps(nextProps){
-        // if (this.state.type == 'player'){
-            //сюда надо уже передавать тип - крестик или нолик
             if ((nextProps.findID)){
-                //if nextprops.type = 'крестик'
-                //в состояние заводим открыт и крестик
-                //в другом случае в состояние заводим открыт и нолик
                 if (this.state.id == nextProps.findID)
-                    // if (nextProps.type == 'x'){
                         this.setState({wasShoot: true, wasAlreadyShoot: true, value: 2}); 
-                    // }
-                    // else if (nextProps.type == 'o'){
-                        // this.setState({wasShoot: true, wasAlreadyShoot: true, value: 2}); 
-                    // }
             }
-
-        // }
+    }
+    componentWillMount(){
+            if ((this.props.findID)){
+                if (this.state.id == this.props.findID)
+                        this.setState({wasShoot: true, wasAlreadyShoot: true, value: 2}); 
+            }
     }
     render() {
-            return  <div className = {"square field__square field__square_computer"} id = {this.state.id} onClick = {this.handleClick.bind(this)}>
+            return  <div className = {"field__square square"} id = {this.state.id} onClick = {this.handleClick.bind(this)}>
                             {this.state.value == 1 ? 
-                                <img className = {this.state.wasShoot ? "square_img" : "disable"} src = {'../public/dagger.png'}/> : 
+                                <img className = {this.state.wasShoot ? "square__img" : "disable"} src = {'../public/dagger.png'}/> : 
                                 this.state.value == 2 ?
-                                    <img className= {this.state.wasShoot ? "square_img" : "disable"} src = {'../public/zero.png'}/> :
+                                    <img className= {this.state.wasShoot ? "square__img" : "disable"} src = {'../public/zero.png'}/> :
                                     <div></div>}
                     </div>
     }
